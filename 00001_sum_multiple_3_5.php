@@ -2,7 +2,7 @@
 
 /**
  * Calculate sum or all natural numbers below $n that are multiple of 3 or 5.
- *
+ * Time Complexity: O(N).
  * @param int $n
  *   
  * @return int
