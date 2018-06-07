@@ -1,18 +1,33 @@
 <?php
 
-function largest_prime_factor($subject) {
-  $i = 1;
-  while ($i <= $subject) {
-    $i++;
-    if ($subject % $i == 0) {
-      $largest_factor = $subject / $i;
-      $smallest_factor = $i;
+/**
+ * @file
+ * Function to find the largest prime factor of a number.
+ */
+
+/**
+ * Returns the largest prime factor of a given number.
+ *
+ * @param int $n
+ *   Given number.
+ *
+ * @return int
+ *   Largest prime factor.
+ */
+function largest_prime_factor($n) {
+  $i = 2;
+  while ($i <= sqrt($n)) {
+    if ($n % $i == 0) {
+      $bigger_factor = $n / $i;
+      $largest_prime_factor = largest_prime_factor($bigger_factor);
       break;
     }
+    $i++;
   }
-  return $largest_factor;
+  if (!isset($largest_prime_factor)) {
+    $largest_prime_factor = $n;
+  }
+  return $largest_prime_factor;
 }
 
-$subject = 600851475143;
-
-echo largest_prime_factor($subject);
+echo largest_prime_factor(600851475143);

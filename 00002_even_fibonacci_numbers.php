@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * Returns sum or all even fibonacci numbers below a given number.
+ *
+ * Time Complexity: ???.
+ *
+ * @param int $n
+ *
+ * @return int
+ */
 function sum_even_fibonacci($n) {
   $fib1 = 1;
   $fib2 = 2;
