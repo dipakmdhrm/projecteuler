@@ -1,15 +1,18 @@
 <?php
 
+function largest_prime_factor($subject) {
+  $i = 1;
+  while ($i <= $subject) {
+    $i++;
+    if ($subject % $i == 0) {
+      $largest_factor = $subject / $i;
+      $smallest_factor = $i;
+      break;
+    }
+  }
+  return $largest_factor;
+}
+
 $subject = 600851475143;
 
-$i = 2;
-while ($i <= $subject) {
-  if ($subject % $i == 0) {
-    echo('<pre>');
-    print_r($subject / $i);
-    echo '<br>';
-    print_r($i);
-    break;
-  }
-  $i++;
-}
+echo largest_prime_factor($subject);
